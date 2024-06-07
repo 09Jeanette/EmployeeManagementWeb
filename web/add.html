@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>add employee</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- script for creating dynamic rows -->
+        <script>
+            function addTemperatures(){
+                var table = document.getElementById("dutiesTable");
+                var newRow = table.insertRow(table.rows.length);
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+
+                cell1.innerHTML = '<input type="text" name="temperature">';
+                cell2.innerHTML = '<button type="button" onClick="addTemperatures()">ADD</button>';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Employees</h1>
+        <p>Please fill in the form below.</p>
+        
+        <form action="AddEmployeeServlet.do" method="POST" enctype="multipart/form-data">>
+            <table>
+                <!-- working with image -->
+                <tr>
+                    <td>Photo:</td>
+                    <td><input type="file" name="image" accept="image/*" required=""></td>
+                </tr>
+                
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" required=""></td>
+                </tr>
+                
+                 <tr>
+                    <td>Surname:</td>
+                    <td><input type="text" name="surname" required=""></td>
+                </tr>
+                
+                 <tr>
+                    <td>Age:</td>
+                    <td><input type="text" name="age" required=""></td>
+                </tr>
+                
+                 <tr>
+                    <td>Employee Number:</td>
+                    <td><input type="text" name="id" required=""></td>
+                </tr>
+                
+                 <tr>
+                    <td>Gender:</td>
+                    <td><input type="text" name="gender" required=""></td>
+                </tr>
+                
+                <!-- dynamic rows -->
+                  <tr>
+                      <td>
+                          <table id="dutiesTable">
+                              <tr>
+                              <td>Temperatures:</td>
+                              <td><input type="text" name="temperature"></td>
+                              <td><button type="button" onclick="addTemperatures()">ADD</button></td>
+                              </tr>
+                          </table>
+                      </td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="PERSIST TO DATABASE"></td>
+                </tr>
+                
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>search employee page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Main heading indicating the purpose of the page -->
+        <h1>Search for an Employee</h1>
+
+        <!-- Paragraph instructing the user on the action to take -->
+        <p>Please fill in the form below to search for an employee.</p>
+
+        <!-- Form to submit a request to search for an employee -->
+        <form action="SearchEmpServlet.do" method="POST">
+            <table>
+                <!-- Table row for employee number input -->
+                <tr>
+                    <td>Employee number:</td>
+                    <!-- Input field for entering employee number -->
+                    <td><input type="text" name="id"></td>
+                </tr>
+
+                <!-- Table row for search button -->
+                <tr>
+                    <td></td>
+                    <!-- Submit button to send the form data to the specified servlet -->
+                    <td><input type="submit" value="SEARCH"></td>
+                </tr>
+            </table>
+        </form>
+
+    </form>
+</body>
+</html>
